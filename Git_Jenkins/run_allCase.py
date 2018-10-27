@@ -6,7 +6,7 @@
 """
 import os
 import unittest
-from Git_Jenkins.common import HTMLTestRunner
+from common import HTMLTestRunner
 
 
 def add_case(caseName='case',rule='test*.py'):

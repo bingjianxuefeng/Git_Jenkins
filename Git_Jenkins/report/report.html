@@ -362,9 +362,9 @@ function hide_img(obj){
 </div>
 <div class='heading'>
 <h1>Unit Test Report</h1>
-<p class='attribute'><strong>开始时间:</strong> 2018-09-18 17:27:36</p>
-<p class='attribute'><strong>耗时:</strong> 0:00:01.960112</p>
-<p class='attribute'><strong>状态:</strong> <span class="tj passCase">Pass</span>3</p>
+<p class='attribute'><strong>开始时间:</strong> 2018-10-27 14:37:58</p>
+<p class='attribute'><strong>耗时:</strong> 0:00:01.690000</p>
+<p class='attribute'><strong>状态:</strong> <span class="tj passCase">Pass</span>2 <span class="tj failCase">Failure</span>1</p>
 
 <p class='description'></p>
 </div>
@@ -397,11 +397,11 @@ function hide_img(obj){
     <th>错误截图</th>
 </tr>
 
-<tr class='passClass'>
+<tr class='failClass'>
     <td>test01.TestQQ</td>
     <td>3</td>
-    <td>3</td>
-    <td>0</td>
+    <td>2</td>
+    <td>1</td>
     <td>0</td>
     <td><a href="javascript:showClassDetail('c1',3)">详情</a></td>
     <td>&nbsp;</td>
@@ -419,17 +419,43 @@ function hide_img(obj){
     <td>无截图</td>
 </tr>
 
-<tr id='pt1.3' class='hiddenRow'>
-    <td><div class='testcase'>test03: 用例3：错误的qq</div></td>
-    <td colspan='5' align='center'><span class='status passCase'>通过</span></td>
+<tr id='ft1.3' class='none'>
+    <td ><div class='testcase'>test03: 用例3：错误的qq</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <span class='status failCase'>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.3')" >
+        失败</a></span>
+
+    <div id='div_ft1.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.3: C:\Python27\lib\unittest\case.py:503: UnicodeWarning: Unicode equal comparison failed to convert both arguments to Unicode - interpreting them as being unequal
+  if not first == second:
+Traceback (most recent call last):
+  File "E:\GitHub\Git_Jenkins\case\test01.py", line 62, in test03
+    self.assertEqual(rq.json()['reason'], '错误的请求参数')
+AssertionError: u'错误的请求参数' != 'éè¯¯çè¯·æ±åæ°'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
     <td>无截图</td>
 </tr>
 
 <tr id='total_row'>
     <th>统计</th>
     <th>3</th>
-    <th>3</th>
-    <th>0</th>
+    <th>2</th>
+    <th>1</th>
     <th>0</th>
     <th>&nbsp;</th>
     <th>&nbsp;</th>
@@ -437,7 +463,7 @@ function hide_img(obj){
 </table>
 <script>
     showCase(1);
-    drawCircle(3, 0, 0);
+    drawCircle(2, 1, 0);
 </script>
 
 <div id='ending'>&nbsp;</div>
